@@ -1,3 +1,4 @@
+import { Server } from './_shared/server.model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  serverElements:Server[] = [new Server('server','test','test')];
+  
+  onServerAdded(server: Server){
+    this.serverElements.push(server);
+  }
 }

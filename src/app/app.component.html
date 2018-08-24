@@ -1,10 +1,15 @@
 <div class="container">
+    <app-cockpit (serverCreated)="onServerAdded($event)"></app-cockpit>
+    <hr>
     <div class="row">
-        <h1>App Commponent</h1>
-        <hr>
-        <!-- <div id="app-servers"></div> --> <!-- Not works -->
-        <!-- <div class="app-servers"></div> --> <!-- works -->
-        <!-- <div app-servers></div> --> <!-- works -->
-        <app-servers></app-servers> <!-- works -->
+      <div class="col-xs-12">
+        <app-server-element *ngFor="let element of serverElements" [name]="element.name">
+          <p>
+            <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+            <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+          </p>
+        </app-server-element>
+      </div>
     </div>
-</div>
+  </div>
+  
