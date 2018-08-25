@@ -12,4 +12,11 @@ export class AppComponent {
   onServerAdded(server: Server){
     this.serverElements.push(server);
   }
+  oddNumbers = [1,3,5];
+  evenNumbers = [2,4,6];
+  onlyOdd = true;
+  value = 5;
+  onClickOdd(){
+    this.onlyOdd = !this.onlyOdd;
+  }
 }
